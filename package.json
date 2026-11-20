@@ -1,0 +1,17 @@
+{
+  "name": "myroom",
+  "version": "1.0.0",
+  "description": "MYROOM - 3D Isometric Room Decorator",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "three": "^0.170.0"
+  }
+}

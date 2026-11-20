@@ -1,0 +1,96 @@
+{
+  "shells": [
+    {
+      "id": "shell_pastel",
+      "name": "Pastel Clay Soft Diorama Shell",
+      "style": "Pastel Clay",
+      "collection": "Shell_Pastel",
+      "world_offset": [40.0, 25.0, 0.0],
+      "floor_size": [4.0, 4.0],
+      "floor_height": 0.0,
+      "base_bottom_z": -0.25,
+      "base_thickness": 0.25,
+      "base_dimensions": [4.44, 4.44, 0.25],
+      "wall_thickness": 0.20,
+      "wall_height": 2.60,
+      "total_triangles": 1740,
+      "openings": [
+        {
+          "type": "window",
+          "shape": "arch",
+          "wall": "wall_left",
+          "center": [-2.0, -0.40, 1.35],
+          "width": 0.90,
+          "height": 1.30,
+          "sill_height": 0.70,
+          "arch_apex_z": 2.00,
+          "description": "Semicircular arch cutout inspired by reference C"
+        }
+      ],
+      "modular_parts": [
+        { "name": "pastel_base_edge", "materials": ["Edge"], "triangles": 200, "description": "Puffy cream base with thin light-wood lower rim" },
+        { "name": "pastel_floor", "materials": ["Floor"], "triangles": 136, "description": "Flat cream floor with mint-green rug area" },
+        { "name": "pastel_wall_back", "materials": ["Wall"], "triangles": 1404, "description": "Continuous curved wall with arch window and rounded top edge" }
+      ]
+    },
+    {
+      "id": "shell_modern_v2",
+      "name": "Modern Glass-Block & Slatted Walnut Shell v2",
+      "style": "Modern",
+      "collection": "Shell_Modern_v2",
+      "world_offset": [0.0, 25.0, 0.0],
+      "floor_size": [4.0, 4.0],
+      "floor_height": 0.0,
+      "base_bottom_z": -0.25,
+      "base_thickness": 0.25,
+      "base_dimensions": [4.23, 4.23, 0.25],
+      "wall_thickness": 0.18,
+      "wall_height": 2.60,
+      "total_triangles": 2008,
+      "modular_parts": [
+        { "name": "modern_v2_base_edge", "materials": ["Edge.005"], "triangles": 120, "description": "Charcoal platform base with thin oak wood trim" },
+        { "name": "modern_v2_floor", "materials": ["Floor.003"], "triangles": 12, "description": "Light oak plank wood floor (#C9A878)" },
+        { "name": "modern_v2_wall_wood", "materials": ["Wall.005"], "triangles": 108, "description": "Right wall: full vertical walnut wood slatted paneling (#6B4A33)" },
+        { "name": "modern_v2_wall_curved", "materials": ["Wall.006"], "triangles": 352, "description": "Left wall (front section): smooth S-curved warm white wall (#F4EFE8)" },
+        { "name": "modern_v2_wall_glassblock", "materials": ["Glass.001", "Mortar"], "triangles": 1416, "description": "Left wall (rear section): 9x13 grid of semi-transparent glass blocks with mortar frame" },
+        { "name": "modern_v2_glass_light", "type": "LIGHT", "description": "Warm area backlight (550W, 3000K) behind the glass block wall" }
+      ]
+    },
+    {
+      "id": "shell_vintage_v2",
+      "name": "Vintage Cozy Bedroom Shell v2",
+      "style": "Vintage",
+      "collection": "Shell_Vintage_v2",
+      "world_offset": [20.0, 25.0, 0.0],
+      "floor_size": [4.0, 4.0],
+      "floor_height": 0.0,
+      "base_bottom_z": -0.25,
+      "base_thickness": 0.25,
+      "base_dimensions": [4.36, 4.36, 0.25],
+      "wall_thickness": 0.18,
+      "wall_height": 2.60,
+      "total_triangles": 828,
+      "openings": [
+        {
+          "type": "window",
+          "shape": "rectangular",
+          "wall": "wall_right",
+          "center": [0.0, 2.0, 1.45],
+          "width": 1.20,
+          "height": 1.20,
+          "sill_height": 0.85,
+          "description": "Cozy glowing retro bedroom window"
+        }
+      ],
+      "modular_parts": [
+        { "name": "vintage_v2_base_edge", "materials": ["Edge.006"], "triangles": 120, "description": "Honey oak wooden base platform rim" },
+        { "name": "vintage_v2_floor", "materials": ["Floor.004"], "triangles": 12, "description": "Dark aged walnut plank floor" },
+        { "name": "vintage_v2_wall_left", "materials": ["Wall.007"], "triangles": 108, "description": "Left wall: warm nostalgic cream plaster" },
+        { "name": "vintage_v2_wainscoting", "materials": ["Wainscoting"], "triangles": 24, "description": "Lower third sage green wainscoting paneling with chair rail trim" },
+        { "name": "vintage_v2_wall_right", "materials": ["Wall.008"], "triangles": 432, "description": "Right wall: narrow pink/cream striped wallpaper with window cutout" },
+        { "name": "vintage_v2_window_frame", "materials": ["Wood.003", "Light_Emission"], "triangles": 84, "description": "Wooden 4-pane cross window frame with glowing sunset emission pane" },
+        { "name": "vintage_v2_baseboard", "materials": ["Wood.003"], "triangles": 48, "description": "Dark walnut baseboard and top crown molding" }
+      ]
+    }
+  ]
+}

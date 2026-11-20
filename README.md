@@ -1,2 +1,22 @@
-# myroom
-MYROOM - decora tu habitación 3D
+# MYROOM
+
+App web para decorar una habitación 3D (Node.js + Express + Three.js).
+
+- Catálogo de objetos (Muebles / Decoración) en estilos pastel, moderno y vintage.
+- Luz cálida, neutra o fresca, editor de colores y 3 habitaciones de ejemplo.
+- Los modelos se hacen en Blender y se exportan como `.glb` a `public/assets/`.
+
+## Ejecutar en local
+
+```bash
+npm install
+npm start
+```
+
+Abrir http://localhost:3000 (comprobación: `/api/health` → `{"ok":true}`).
+
+## Publicación
+
+Alojada en Render (Web Service, plan Free): build `npm install`, start `npm start`.
+El plan gratuito se duerme tras ~15 min sin uso y tarda ~1 min en despertar.
+Los diseños se guardan en el navegador o en el enlace, no en el servidor.

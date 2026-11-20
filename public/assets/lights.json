@@ -1,0 +1,31 @@
+{
+  "presets": [
+    {
+      "id": "warm",
+      "name": "Warm Cozy Golden",
+      "color_temperature_k": 2700,
+      "color_hex": "#FFA858",
+      "color_rgb": [1.0, 0.658, 0.345],
+      "intensity": 1.2,
+      "description": "Cozy, intimate golden hour lighting with warm amber accents. Ideal for bedrooms and relaxing evenings."
+    },
+    {
+      "id": "neutral",
+      "name": "Neutral Daylight",
+      "color_temperature_k": 4000,
+      "color_hex": "#FFEBD6",
+      "color_rgb": [1.0, 0.921, 0.839],
+      "intensity": 1.0,
+      "description": "Balanced, soft studio daylight that displays natural pastel materials and subtle textures clearly."
+    },
+    {
+      "id": "cool",
+      "name": "Cool Morning Clean",
+      "color_temperature_k": 6500,
+      "color_hex": "#D8ECFF",
+      "color_rgb": [0.847, 0.925, 1.0],
+      "intensity": 0.95,
+      "description": "Crisp, fresh morning daylight with gentle sky-blue undertones. Perfect for bright modern interiors."
+    }
+  ]
+}

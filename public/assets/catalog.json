@@ -1,0 +1,722 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-11-19T21:32:00Z",
+  "total_items": 39,
+  "total_files": 39,
+  "total_size_mb": 8.88,
+  "items": [
+    {
+      "id": "modern_bed_01",
+      "name": "Modern Platform Bed",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bed_01.glb",
+      "size_meters": {
+        "width": 2.0,
+        "depth": 2.2,
+        "height": 0.86
+      },
+      "triangles": 404,
+      "materials": [
+        "Main_Color.010",
+        "Fabric.005"
+      ],
+      "file_size_kb": 391.5
+    },
+    {
+      "id": "modern_bed_02",
+      "name": "Modern Curved Headboard Bed",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bed_02.glb",
+      "size_meters": {
+        "width": 1.8,
+        "depth": 2.15,
+        "height": 1.07
+      },
+      "triangles": 1008,
+      "materials": [
+        "Fabric.006",
+        "Metal.001",
+        "Main_Color.011"
+      ],
+      "file_size_kb": 51.2
+    },
+    {
+      "id": "modern_bed_03",
+      "name": "Modern Wooden Headboard Bed",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bed_03.glb",
+      "size_meters": {
+        "width": 1.88,
+        "depth": 2.165,
+        "height": 1.265
+      },
+      "triangles": 1484,
+      "materials": [
+        "Wood.002",
+        "Fabric.007",
+        "Secondary_Color.008"
+      ],
+      "file_size_kb": 177.5
+    },
+    {
+      "id": "modern_bedspread_01",
+      "name": "Modern Fitted Duvet",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bedspread_01.glb",
+      "size_meters": {
+        "width": 1.65,
+        "depth": 1.795,
+        "height": 0.16
+      },
+      "triangles": 296,
+      "materials": [
+        "Fabric.008",
+        "Secondary_Color.009"
+      ],
+      "file_size_kb": 26.7
+    },
+    {
+      "id": "modern_bedspread_02",
+      "name": "Modern Quilted Bedspread",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bedspread_02.glb",
+      "size_meters": {
+        "width": 1.62,
+        "depth": 1.75,
+        "height": 0.2
+      },
+      "triangles": 188,
+      "materials": [
+        "Fabric.009",
+        "Secondary_Color.010"
+      ],
+      "file_size_kb": 23.6
+    },
+    {
+      "id": "modern_bedspread_03",
+      "name": "Modern Puffy Duvet",
+      "style": "modern",
+      "category": "bed",
+      "file_path": "assets/modern_bedspread_03.glb",
+      "size_meters": {
+        "width": 1.72,
+        "depth": 1.755,
+        "height": 0.25
+      },
+      "triangles": 432,
+      "materials": [
+        "Secondary_Color.011",
+        "Fabric.010"
+      ],
+      "file_size_kb": 444.0
+    },
+    {
+      "id": "modern_blanket_01",
+      "name": "Modern Folded Bed Runner",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_blanket_01.glb",
+      "size_meters": {
+        "width": 1.75,
+        "depth": 0.55,
+        "height": 0.07
+      },
+      "triangles": 108,
+      "materials": [
+        "Secondary_Color.012",
+        "Main_Color.012"
+      ],
+      "file_size_kb": 29.6
+    },
+    {
+      "id": "modern_blanket_02",
+      "name": "Modern Draped Throw Blanket",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_blanket_02.glb",
+      "size_meters": {
+        "width": 1.213,
+        "depth": 0.692,
+        "height": 0.11
+      },
+      "triangles": 216,
+      "materials": [
+        "Fabric.011",
+        "Secondary_Color.013"
+      ],
+      "file_size_kb": 25.2
+    },
+    {
+      "id": "modern_cushion_01",
+      "name": "Modern Rectangular Sleeping Pillow",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_cushion_01.glb",
+      "size_meters": {
+        "width": 0.75,
+        "depth": 0.48,
+        "height": 0.18
+      },
+      "triangles": 188,
+      "materials": [
+        "Fabric.012",
+        "Secondary_Color.014"
+      ],
+      "file_size_kb": 433.6
+    },
+    {
+      "id": "modern_cushion_02",
+      "name": "Modern Square Accent Cushion",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_cushion_02.glb",
+      "size_meters": {
+        "width": 0.45,
+        "depth": 0.45,
+        "height": 0.16
+      },
+      "triangles": 188,
+      "materials": [
+        "Secondary_Color.015",
+        "Main_Color.013"
+      ],
+      "file_size_kb": 98.9
+    },
+    {
+      "id": "modern_cushion_03",
+      "name": "Modern Bolster Cylinder Cushion",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_cushion_03.glb",
+      "size_meters": {
+        "width": 0.85,
+        "depth": 0.219,
+        "height": 0.219
+      },
+      "triangles": 556,
+      "materials": [
+        "Secondary_Color.016",
+        "Main_Color.014"
+      ],
+      "file_size_kb": 456.3
+    },
+    {
+      "id": "modern_cushion_04",
+      "name": "Modern Round Button Cushion",
+      "style": "modern",
+      "category": "decor",
+      "file_path": "assets/modern_cushion_04.glb",
+      "size_meters": {
+        "width": 0.435,
+        "depth": 0.435,
+        "height": 0.155
+      },
+      "triangles": 712,
+      "materials": [
+        "Main_Color.015",
+        "Secondary_Color.017"
+      ],
+      "file_size_kb": 457.0
+    },
+    {
+      "id": "vintage_bed_01",
+      "name": "Vintage Wrought Iron Bed",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bed_01.glb",
+      "size_meters": {
+        "width": 1.66,
+        "depth": 2.1,
+        "height": 1.22
+      },
+      "triangles": 2748,
+      "materials": [
+        "Metal",
+        "Fabric"
+      ],
+      "file_size_kb": 66.5
+    },
+    {
+      "id": "vintage_bed_02",
+      "name": "Vintage Carved Wood Spindle Bed",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bed_02.glb",
+      "size_meters": {
+        "width": 1.82,
+        "depth": 2.13,
+        "height": 1.32
+      },
+      "triangles": 1188,
+      "materials": [
+        "Wood",
+        "Fabric"
+      ],
+      "file_size_kb": 23.4
+    },
+    {
+      "id": "vintage_bed_03",
+      "name": "Vintage Painted Sage Wood Bed",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bed_03.glb",
+      "size_meters": {
+        "width": 1.76,
+        "depth": 2.095,
+        "height": 1.23
+      },
+      "triangles": 968,
+      "materials": [
+        "Wood",
+        "Main_Color",
+        "Fabric"
+      ],
+      "file_size_kb": 20.1
+    },
+    {
+      "id": "vintage_bedspread_01",
+      "name": "Vintage Checkered Quilt",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bedspread_01.glb",
+      "size_meters": {
+        "width": 1.62,
+        "depth": 1.76,
+        "height": 0.17
+      },
+      "triangles": 2808,
+      "materials": [
+        "Fabric",
+        "Main_Color",
+        "Secondary_Color"
+      ],
+      "file_size_kb": 53.2
+    },
+    {
+      "id": "vintage_bedspread_02",
+      "name": "Vintage Ruffled Floral Bedspread",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bedspread_02.glb",
+      "size_meters": {
+        "width": 1.64,
+        "depth": 1.795,
+        "height": 0.21
+      },
+      "triangles": 604,
+      "materials": [
+        "Fabric",
+        "Secondary_Color"
+      ],
+      "file_size_kb": 12.9
+    },
+    {
+      "id": "vintage_bedspread_03",
+      "name": "Vintage Patchwork Duvet",
+      "style": "vintage",
+      "category": "bed",
+      "file_path": "assets/vintage_bedspread_03.glb",
+      "size_meters": {
+        "width": 1.65,
+        "depth": 1.74,
+        "height": 0.205
+      },
+      "triangles": 540,
+      "materials": [
+        "Main_Color",
+        "Fabric",
+        "Secondary_Color"
+      ],
+      "file_size_kb": 10.9
+    },
+    {
+      "id": "vintage_blanket_01",
+      "name": "Vintage Crocheted Throw Blanket",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_blanket_01.glb",
+      "size_meters": {
+        "width": 1.72,
+        "depth": 0.59,
+        "height": 0.1
+      },
+      "triangles": 396,
+      "materials": [
+        "Secondary_Color",
+        "Main_Color"
+      ],
+      "file_size_kb": 9.2
+    },
+    {
+      "id": "vintage_blanket_02",
+      "name": "Vintage Wool Fringe Blanket",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_blanket_02.glb",
+      "size_meters": {
+        "width": 1.2,
+        "depth": 0.78,
+        "height": 0.08
+      },
+      "triangles": 360,
+      "materials": [
+        "Fabric",
+        "Secondary_Color"
+      ],
+      "file_size_kb": 8.6
+    },
+    {
+      "id": "vintage_cushion_01",
+      "name": "Vintage Floral Ruffled Cushion",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_cushion_01.glb",
+      "size_meters": {
+        "width": 0.48,
+        "depth": 0.48,
+        "height": 0.18
+      },
+      "triangles": 180,
+      "materials": [
+        "Secondary_Color",
+        "Main_Color"
+      ],
+      "file_size_kb": 5.1
+    },
+    {
+      "id": "vintage_cushion_02",
+      "name": "Vintage Velvet Tufted Cushion",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_cushion_02.glb",
+      "size_meters": {
+        "width": 0.46,
+        "depth": 0.46,
+        "height": 0.185
+      },
+      "triangles": 588,
+      "materials": [
+        "Fabric",
+        "Secondary_Color"
+      ],
+      "file_size_kb": 12.4
+    },
+    {
+      "id": "vintage_cushion_03",
+      "name": "Vintage Embroidered Bolster Cushion",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_cushion_03.glb",
+      "size_meters": {
+        "width": 0.84,
+        "depth": 0.24,
+        "height": 0.24
+      },
+      "triangles": 164,
+      "materials": [
+        "Secondary_Color",
+        "Main_Color"
+      ],
+      "file_size_kb": 4.9
+    },
+    {
+      "id": "vintage_cushion_04",
+      "name": "Vintage Scalloped Edge Cushion",
+      "style": "vintage",
+      "category": "decor",
+      "file_path": "assets/vintage_cushion_04.glb",
+      "size_meters": {
+        "width": 0.5,
+        "depth": 0.38,
+        "height": 0.165
+      },
+      "triangles": 216,
+      "materials": [
+        "Fabric",
+        "Main_Color"
+      ],
+      "file_size_kb": 4.9
+    },
+    {
+      "id": "pastel_bed_01",
+      "name": "Pastel Puffy Cloud Bed",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bed_01.glb",
+      "size_meters": {
+        "width": 1.82,
+        "depth": 2.21,
+        "height": 1.055
+      },
+      "triangles": 564,
+      "materials": [
+        "Main_Color.001",
+        "Fabric.001"
+      ],
+      "file_size_kb": 455.9
+    },
+    {
+      "id": "pastel_bed_02",
+      "name": "Pastel Arch Rainbow Headboard Bed",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bed_02.glb",
+      "size_meters": {
+        "width": 1.76,
+        "depth": 2.26,
+        "height": 1.425
+      },
+      "triangles": 1896,
+      "materials": [
+        "Main_Color.002",
+        "Secondary_Color.001",
+        "Fabric.002"
+      ],
+      "file_size_kb": 504.4
+    },
+    {
+      "id": "pastel_bed_03",
+      "name": "Pastel Marshmallow Rounded Bed",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bed_03.glb",
+      "size_meters": {
+        "width": 1.72,
+        "depth": 2.11,
+        "height": 0.96
+      },
+      "triangles": 4516,
+      "materials": [
+        "Wood.001",
+        "Main_Color.003",
+        "Fabric.003"
+      ],
+      "file_size_kb": 693.1
+    },
+    {
+      "id": "pastel_bedspread_01",
+      "name": "Pastel Mint Puffy Quilt",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bedspread_01.glb",
+      "size_meters": {
+        "width": 1.64,
+        "depth": 1.82,
+        "height": 0.2
+      },
+      "triangles": 376,
+      "materials": [
+        "Main_Color.004",
+        "Secondary_Color.002"
+      ],
+      "file_size_kb": 450.4
+    },
+    {
+      "id": "pastel_bedspread_02",
+      "name": "Pastel Lavender Wavy Bedspread",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bedspread_02.glb",
+      "size_meters": {
+        "width": 1.614,
+        "depth": 1.76,
+        "height": 0.2
+      },
+      "triangles": 940,
+      "materials": [
+        "Main_Color.005",
+        "Secondary_Color.003"
+      ],
+      "file_size_kb": 38.1
+    },
+    {
+      "id": "pastel_bedspread_03",
+      "name": "Pastel Baby Blue Cloud Duvet",
+      "style": "pastel",
+      "category": "bed",
+      "file_path": "assets/pastel_bedspread_03.glb",
+      "size_meters": {
+        "width": 1.65,
+        "depth": 1.791,
+        "height": 0.198
+      },
+      "triangles": 1484,
+      "materials": [
+        "Secondary_Color.004",
+        "Main_Color.006"
+      ],
+      "file_size_kb": 483.9
+    },
+    {
+      "id": "pastel_blanket_01",
+      "name": "Pastel Butter Yellow Folded Blanket",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_blanket_01.glb",
+      "size_meters": {
+        "width": 1.65,
+        "depth": 0.55,
+        "height": 0.09
+      },
+      "triangles": 188,
+      "materials": [
+        "Secondary_Color.005"
+      ],
+      "file_size_kb": 430.0
+    },
+    {
+      "id": "pastel_blanket_02",
+      "name": "Pastel Peach Draped Throw",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_blanket_02.glb",
+      "size_meters": {
+        "width": 1.216,
+        "depth": 0.746,
+        "height": 0.11
+      },
+      "triangles": 1176,
+      "materials": [
+        "Main_Color.007"
+      ],
+      "file_size_kb": 50.9
+    },
+    {
+      "id": "pastel_cushion_01",
+      "name": "Pastel Flower Blossom Cushion",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_cushion_01.glb",
+      "size_meters": {
+        "width": 0.471,
+        "depth": 0.485,
+        "height": 0.13
+      },
+      "triangles": 1036,
+      "materials": [
+        "Secondary_Color.006",
+        "Main_Color.008"
+      ],
+      "file_size_kb": 469.5
+    },
+    {
+      "id": "pastel_cushion_02",
+      "name": "Pastel Rainbow Arch Cushion",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_cushion_02.glb",
+      "size_meters": {
+        "width": 0.464,
+        "depth": 0.268,
+        "height": 0.225
+      },
+      "triangles": 596,
+      "materials": [
+        "Fabric.004"
+      ],
+      "file_size_kb": 442.0
+    },
+    {
+      "id": "pastel_cushion_03",
+      "name": "Pastel Puffy Heart Cushion",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_cushion_03.glb",
+      "size_meters": {
+        "width": 0.433,
+        "depth": 0.44,
+        "height": 0.286
+      },
+      "triangles": 324,
+      "materials": [
+        "Secondary_Color.007"
+      ],
+      "file_size_kb": 433.1
+    },
+    {
+      "id": "pastel_cushion_04",
+      "name": "Pastel Rounded Cylinder Bolster",
+      "style": "pastel",
+      "category": "decor",
+      "file_path": "assets/pastel_cushion_04.glb",
+      "size_meters": {
+        "width": 0.75,
+        "depth": 0.219,
+        "height": 0.219
+      },
+      "triangles": 1996,
+      "materials": [
+        "Main_Color.009"
+      ],
+      "file_size_kb": 68.4
+    },
+    {
+      "id": "shell_modern",
+      "name": "Modern Glass-Block & Slatted Walnut Shell",
+      "style": "modern",
+      "category": "shell",
+      "file_path": "assets/shell_modern.glb",
+      "size_meters": {
+        "width": 4.441,
+        "depth": 4.24,
+        "height": 2.85
+      },
+      "triangles": 2008,
+      "modular_parts": [
+        "modern_v2_base_edge",
+        "modern_v2_floor",
+        "modern_v2_wall_wood",
+        "modern_v2_wall_curved",
+        "modern_v2_wall_glassblock"
+      ],
+      "file_size_kb": 584.8
+    },
+    {
+      "id": "shell_vintage",
+      "name": "Vintage Nostalgic Bedroom Shell",
+      "style": "vintage",
+      "category": "shell",
+      "file_path": "assets/shell_vintage.glb",
+      "size_meters": {
+        "width": 4.36,
+        "depth": 4.36,
+        "height": 2.85
+      },
+      "triangles": 828,
+      "modular_parts": [
+        "vintage_v2_base_edge",
+        "vintage_v2_floor",
+        "vintage_v2_wall_left",
+        "vintage_v2_wainscoting",
+        "vintage_v2_wall_right",
+        "vintage_v2_window_frame",
+        "vintage_v2_baseboard"
+      ],
+      "file_size_kb": 587.2
+    },
+    {
+      "id": "shell_pastel",
+      "name": "Pastel Clay Soft Arch Shell",
+      "style": "pastel",
+      "category": "shell",
+      "file_path": "assets/shell_pastel.glb",
+      "size_meters": {
+        "width": 4.44,
+        "depth": 4.44,
+        "height": 2.85
+      },
+      "triangles": 1740,
+      "modular_parts": [
+        "pastel_base_edge",
+        "pastel_floor",
+        "pastel_wall_back"
+      ],
+      "file_size_kb": 555.8
+    }
+  ]
+}

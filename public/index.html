@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>MYROOM - Diseñador 3D Isométrico</title>
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Native Browser ES Modules Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "/three/build/three.module.js",
+      "three/addons/": "/three/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 3D Viewport Canvas Container: 100vw x 100dvh behind everything, never resized -->
+  <div id="viewport-container"></div>
+
+  <!-- Loading Toast Indicator -->
+  <div id="loading-indicator" class="hidden">
+    <div class="spinner"></div>
+    <span id="loading-text">Cargando habitación...</span>
+  </div>
+
+  <!-- TOP BAR: Thin & slim floating bar (max 48px tall) -->
+  <header id="topbar" class="floating-panel">
+    <div class="topbar-left">
+      <div class="logo-badge">
+        <span class="sparkle">✨</span>
+        <span class="logo-text">MYROOM</span>
+      </div>
+    </div>
+
+    <!-- Center: Light Presets -->
+    <div class="topbar-center">
+      <div class="segmented-control" id="lighting-controls" title="Preajustes de iluminación">
+        <button data-light="warm" class="active">☀️ Cálida</button>
+        <button data-light="neutral">🌤️ Neutra</button>
+        <button data-light="cool">❄️ Fresca</button>
+      </div>
+    </div>
+
+    <!-- Right: Actions, Hide Panels, Help -->
+    <div class="topbar-right">
+      <button id="undo-btn" class="btn-topbar" title="Deshacer (Ctrl+Z)" disabled>
+        <span>↩️</span>
+        <span class="btn-text">Deshacer</span>
+      </button>
+      <button id="redo-btn" class="btn-topbar" title="Rehacer (Ctrl+Y)" disabled>
+        <span>↪️</span>
+        <span class="btn-text">Rehacer</span>
+      </button>
+      <button id="reset-btn" class="btn-topbar" title="Reiniciar habitación">
+        <span>🔄</span>
+        <span class="btn-text">Reiniciar</span>
+      </button>
+      <button id="toggle-panels-btn" class="btn-topbar btn-icon-only" title="Ocultar/mostrar paneles (Modo Vista)">
+        <span>👁️</span>
+      </button>
+      <button id="help-btn" class="btn-topbar btn-icon-only" title="Ayuda y controles">
+        <span>❓</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- FLOATING CATALOG OPEN BUTTON (Visible when catalog column is closed) -->
+  <button id="catalog-open-fab" class="catalog-fab hidden floating-panel" title="Abrir catálogo 3D">
+    <span class="fab-icon">🛋️</span>
+    <span class="fab-label">Catálogo</span>
+  </button>
+
+  <!-- LEFT COLUMN = CATALOG (Floating, Resizable, 2 Tabs Only) -->
+  <aside id="catalog-drawer" class="floating-panel">
+    
+    <!-- Mobile Drag Handle (Horizontal bar at top edge) -->
+    <div class="sheet-drag-handle" id="catalog-mobile-handle">
+      <div class="drag-bar"></div>
+    </div>
+
+    <!-- Desktop Resizable Handle (Vertical drag bar on right edge, at least 14px wide) -->
+    <div id="catalog-resize-handle" class="resize-handle-vertical" title="Arrastra para cambiar ancho del catálogo / Doble clic para reiniciar">
+      <div class="resize-grip-icon">⋮⋮</div>
+    </div>
+
+    <!-- 1. CATALOG LIST VIEW -->
+    <div id="catalog-list-view">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <span>🛋️</span>
+          <span>Catálogo 3D</span>
+        </div>
+        <div class="header-right">
+          <span id="catalog-counter" class="card-badge badge-modern">36 objetos</span>
+          <button id="catalog-close-btn" class="btn-icon-close" title="Cerrar catálogo (✕)">&times;</button>
+        </div>
+      </div>
+
+      <!-- Horizontal scrollbar track placed ABOVE the style filter row -->
+      <div class="custom-scroll-track" id="style-scroll-track">
+        <div class="custom-scroll-thumb" id="style-scroll-thumb"></div>
+      </div>
+
+      <!-- Style Filter Row -->
+      <div class="filter-bar" id="style-filter-bar">
+        <button class="filter-chip active" data-style="all">Todos</button>
+        <button class="filter-chip" data-style="pastel">🌸 Pastel</button>
+        <button class="filter-chip" data-style="modern">🏢 Moderno</button>
+        <button class="filter-chip" data-style="vintage">📻 Vintage</button>
+      </div>
+
+      <!-- Horizontal scrollbar track placed ABOVE the tabs row -->
+      <div class="custom-scroll-track" id="tabs-scroll-track">
+        <div class="custom-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+
+      <!-- Two Tabs Only: Muebles & Decoración -->
+      <nav class="tabs-scroll" id="category-tabs">
+        <button class="tab-btn active" data-cat="furniture">Muebles</button>
+        <button class="tab-btn" data-cat="decor">Decoración</button>
+      </nav>
+
+      <!-- Catalog Grid with Vertical Scrollbar -->
+      <div class="catalog-grid-wrapper">
+        <div class="catalog-grid" id="catalog-grid"></div>
+        <div class="custom-vertical-track" id="grid-vertical-track">
+          <div class="custom-vertical-thumb" id="grid-vertical-thumb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. DETAIL VIEW (Active during object placing / editing mode) -->
+    <div id="catalog-detail-view" class="hidden">
+      <div class="drawer-header">
+        <button id="detail-back-btn" class="btn-icon-back" title="Volver al catálogo (←)">
+          <span>←</span>
+        </button>
+        <div class="drawer-title" style="flex: 1; text-align: center;">
+          <span id="detail-mode-badge" class="mode-badge-placing">Colocando</span>
+        </div>
+        <button id="detail-close-btn" class="btn-icon-close" title="Cerrar panel (✕)">&times;</button>
+      </div>
+
+      <div class="detail-content">
+        <!-- Big Preview Image -->
+        <div class="detail-preview-box">
+          <img id="detail-preview-img" src="" alt="Vista previa">
+        </div>
+
+        <!-- Title & Metadata -->
+        <div class="detail-info">
+          <h2 id="detail-title">Nombre del objeto</h2>
+          <div class="detail-meta">
+            <span id="detail-style-badge" class="card-badge badge-modern">Estilo</span>
+            <span id="detail-size-info">0.0m × 0.0m</span>
+          </div>
+        </div>
+
+        <!-- Color Customization Section -->
+        <div class="detail-section">
+          <div class="section-subtitle">🎨 Personalizar Colores</div>
+          <div id="detail-color-list" class="color-rows-container"></div>
+        </div>
+
+        <!-- Interactive Drag Hint -->
+        <div class="drag-hint-box">
+          <span>✋</span>
+          <span>Arrastra el objeto por el suelo para ubicarlo con ajuste a la cuadrícula.</span>
+        </div>
+
+        <!-- Quick Transform Buttons (Rotate & Scale) -->
+        <div class="quick-transform-row">
+          <button id="detail-rotate-btn" class="btn-quick-transform" title="Girar 45° (R)">
+            <span>🔄 Girar 45°</span>
+          </button>
+          <button id="detail-scale-up-btn" class="btn-quick-transform" title="Aumentar tamaño (+)">
+            <span>➕ Mayor</span>
+          </button>
+          <button id="detail-scale-down-btn" class="btn-quick-transform" title="Reducir tamaño (-)">
+            <span>➖ Menor</span>
+          </button>
+        </div>
+
+        <!-- THREE BIG ACTION BUTTONS -->
+        <div class="detail-actions">
+          <!-- 1. ✓ CONFIRM (Soft Green) -->
+          <button id="detail-confirm-btn" class="btn-big-confirm" title="Fijar y bloquear objeto en la habitación">
+            <span class="btn-big-icon">✓</span>
+            <span class="btn-big-label">CONFIRMAR</span>
+          </button>
+
+          <!-- 2. ← BACK (Neutral Gray-Blue) & 3. 🗑 DELETE (Soft Red) -->
+          <div class="detail-action-buttons-row">
+            <button id="detail-cancel-btn" class="btn-big-back" title="Cancelar colocación y volver">
+              <span class="btn-action-icon">←</span>
+              <span>Volver</span>
+            </button>
+            <button id="detail-delete-btn" class="btn-big-delete" title="Eliminar objeto de la habitación">
+              <span class="btn-action-icon">🗑️</span>
+              <span>Eliminar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- PROPERTIES BOX (Floating card at bottom center when a locked object is selected) -->
+  <div id="properties-card" class="floating-panel hidden">
+    <div class="properties-header">
+      <div class="prop-title-wrap">
+        <span class="prop-locked-icon">🔒</span>
+        <strong id="prop-object-name">Mueble fijado</strong>
+      </div>
+      <div class="prop-header-actions">
+        <button id="prop-unlock-btn" class="btn-unlock" title="Desbloquear para mover o rotar">
+          <span>🔓 Desbloquear</span>
+        </button>
+        <button id="prop-close-btn" class="btn-icon-close" title="Deseleccionar">&times;</button>
+      </div>
+    </div>
+
+    <!-- Quick action buttons -->
+    <div class="prop-quick-bar">
+      <button id="prop-rotate-btn" class="btn-prop-tool" title="Girar 45°">🔄 Girar</button>
+      <button id="prop-scale-up-btn" class="btn-prop-tool" title="Aumentar tamaño">➕ Mayor</button>
+      <button id="prop-scale-down-btn" class="btn-prop-tool" title="Reducir tamaño">➖ Menor</button>
+      <button id="prop-duplicate-btn" class="btn-prop-tool" title="Duplicar">📋 Duplicar</button>
+      <button id="prop-delete-btn" class="btn-prop-tool btn-prop-delete" title="Eliminar">🗑️ Borrar</button>
+    </div>
+
+    <!-- Color Editor for selected object -->
+    <div class="prop-colors-section">
+      <div class="section-subtitle" style="margin-bottom: 6px;">🎨 Colores del objeto</div>
+      <div id="prop-color-list" class="color-rows-container"></div>
+    </div>
+  </div>
+
+  <!-- HELP FLOATING CARD (Top right corner, opened by ?) -->
+  <aside id="help-card" class="floating-panel hidden">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>📖</span>
+        <span>Guía de controles</span>
+      </div>
+      <button id="help-close-btn" class="btn-icon-close" title="Cerrar ayuda">&times;</button>
+    </div>
+    <div class="help-content">
+      <div class="help-item">
+        <div class="help-icon">🛋️</div>
+        <div class="help-text">
+          <strong>Añadir un objeto</strong>
+          Toca cualquier mueble del catálogo para colocarlo en la habitación en modo colocación.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">✋</div>
+        <div class="help-text">
+          <strong>Mover con cuadrícula</strong>
+          Arrastra el objeto por el suelo con imantación automática cada 0.2 m.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">🔄</div>
+        <div class="help-text">
+          <strong>Girar y escalar</strong>
+          Usa los botones de girar (o tecla R) y tamaño (+ / -) para adaptarlo a tu gusto.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">🎨</div>
+        <div class="help-text">
+          <strong>Colores y arcoíris</strong>
+          Usa las bolitas de paleta o pulsa la bolita arcoíris (+) para el selector completo con brillo y saturación.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">✅</div>
+        <div class="help-text">
+          <strong>Confirmar y bloquear (✓)</strong>
+          Pulsa el botón verde para fijar el objeto. Queda bloqueado para no arrastrarlo por accidente.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">🔓</div>
+        <div class="help-text">
+          <strong>Desbloquear y editar</strong>
+          Toca cualquier mueble fijado y pulsa 🔓 para volver a moverlo o reubicarlo.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">↔️</div>
+        <div class="help-text">
+          <strong>Redimensionar catálogo</strong>
+          Arrastra la barra lateral para ensanchar o estrechar la columna. Doble clic para restablecer.
+        </div>
+      </div>
+      <div class="help-item">
+        <div class="help-icon">👁️</div>
+        <div class="help-text">
+          <strong>Modo Vista (Ocultar paneles)</strong>
+          Pulsa el ojo en la barra superior para contemplar tu habitación despejada sin paneles.
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- DIALOG: CONFIRM CURRENT OBJECT WHEN SWITCHING -->
+  <div id="confirm-switch-dialog" class="dialog-backdrop hidden">
+    <div class="dialog-card">
+      <div class="dialog-icon">🤔</div>
+      <div class="dialog-title">¿Confirmar el objeto actual?</div>
+      <div class="dialog-desc">Tienes un objeto en modo colocación. ¿Quieres fijarlo antes de cambiar?</div>
+      <div class="dialog-actions">
+        <button id="dialog-confirm-btn" class="dialog-btn btn-dialog-confirm">✓ Confirmar</button>
+        <button id="dialog-discard-btn" class="dialog-btn btn-dialog-discard">✗ Descartar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- START MODAL (Choice on launch or reset) -->
+  <div id="start-modal-backdrop">
+    <div class="start-modal">
+      <div class="modal-header">
+        <h1>✨ Diseña tu habitación diorama</h1>
+        <p>Elige cómo quieres empezar a decorar tu espacio 3D</p>
+      </div>
+
+      <div class="section-label">Opción 1: Habitación Vacía</div>
+      <div class="cards-row" id="empty-rooms-row">
+        <div class="choice-card" data-action="empty" data-style="pastel">
+          <div class="choice-icon">🌸</div>
+          <div class="choice-name">Pastel Clay</div>
+          <div class="choice-desc">Pared curva con arco, base acolchada y tonos suaves.</div>
+        </div>
+        <div class="choice-card" data-action="empty" data-style="modern">
+          <div class="choice-icon">🏢</div>
+          <div class="choice-name">Moderno</div>
+          <div class="choice-desc">Pared de bloques de vidrio, listones de nogal y roble claro.</div>
+        </div>
+        <div class="choice-card" data-action="empty" data-style="vintage">
+          <div class="choice-icon">📻</div>
+          <div class="choice-name">Vintage Retro</div>
+          <div class="choice-desc">Ventana cálida iluminada, friso verde salvia y madera envejecida.</div>
+        </div>
+      </div>
+
+      <div class="section-label">Opción 2: Habitaciones de Ejemplo Prediseñadas</div>
+      <div class="cards-row" id="example-rooms-row">
+        <!-- Rendered dynamically from examples.json -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Script (ES Module) -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
